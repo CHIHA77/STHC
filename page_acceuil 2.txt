@@ -1,0 +1,621 @@
+const char show_data[] PROGMEM = R"rawliteral(
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STHC BY YS INNOVATION</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="http://www.ys-innovation.tn/DocsForLinks/gauge_template/raphael-2.1.4.min.js"></script>
+
+        <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+    <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/adamculpepper/toggle-switchy@latest/toggle-switchy.css">
+    <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/adamculpepper/toggle-switchy@latest/docs/assets/css/custom.css">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+<script src="http://ys-innovation.tn/js/gauge_TH.js"></script>
+</head>
+<body>
+  <div class="content" style="padding:10px;">
+    <center> 
+    
+               <div class="button rosy col  row justify-content-center  mb-5" 
+             style=" background-color:blue  ; width:1200px; 
+                     font: italic small-caps bold 20px/30px Georgia, serif;
+                     background-color:black;
+                     padding:10px; 
+                     margin-top:10px; 
+                     border-radius: 10px;" >
+                     
+             <span  style="font-size: 18px;width:100%;"  > Supervision de variation T/H  </span><br>
+             <span style="font-size: 25px;width:100%;"  id="ID_deslocal"  > Local à controler  </span>
+
+           </div>
+           
+           
+           
+ <div   class="col  row justify-content-center " 
+ style=" background-color:#d7ccc8 ;
+                                                          width:1200px;
+                                                         padding-bottom:20px;   
+                                                         border-radius: 17px;
+">   
+ 
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9  row justify-content-around  " style=" background-color:xxxgreen  ;padding-top:20px; width: ;" >   
+       
+       
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row justify-content-around mb-1 " style=" width: ;   background-color:xxxred; " >
+
+              <form  class="button black mb-2 "
+                    style="
+                           height:160px;
+                           padding-top:1px;
+                           border-radius: 17px;
+                           " >
+                    <center>
+                        <h1 style=" padding:5px;
+                           font:  small-caps italic bold 17px/10px Georgia, serif; color:yellow;margin-bottom:15px;margin-top:10px;">
+                            Température(°C)
+                        </h1>                 
+                        <div class="box">
+                            <div id="g1" class="gauge"style =" height:100px;width: 200px;"></div>   
+                        </div>
+                    </center>
+              </form>
+              
+              <form  class="button black mb-2 "
+
+                    style="
+                           height:160px;
+                           padding-top:1px;
+                           border-radius: 17px;
+                           " >
+                <center>
+                <h1 style=" padding:5px;
+                           font:  small-caps italic bold 17px/10px Georgia, serif; color:yellow;margin-bottom:15px;margin-top:10px;">
+                  Humidité(%)
+                </h1>                 
+                
+                <div class="box">
+                    <div id="g2" class="gauge"style =" height:100px;width: 200px;"></div>   
+                </div>
+                </center>
+              </form>
+                </div>
+                
+                
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row justify-content-around mb-3 " style=" width: ;   background-color:xxxxred; " >
+
+ 
+                <center>
+                           <img src='http://www.ys-innovation.tn/images_ESP/SMXX6.jpg' alt="" width="100%" height="300px">
+
+                </center>
+
+           
+                </div>
+                
+                
+  <div class="  col   ">   
+  <!------------------------------------------------------------------------------>
+     
+        <div class="col row justify-content-center mb-1 " style=" width: ;   background-color:; " >
+
+                              <div class=" col  "style=" 
+                                                    color:yellow; background-color: #880E4F  ; 
+                                                    padding: 10px;
+                                                    width:  ;
+                                                    font: italic small-caps bold 16px/16px Georgia, serif;
+                                                    text-align:left;
+                                                    " > Mode  
+                              </div> 
+                              <div  class=" col   " id="ID_mode"
+                                   style=" 
+                                         background-color:#3E2723; 
+                                         width:  ;
+                                          color:white; 
+                                           padding: 10px;
+                                          font: italic small-caps bold 15px/20px Georgia, serif;
+                                          text-align:left;
+                                          " >"*******"
+                              </div> 
+     </div>       
+  <!------------------------------------------------------------------------------>
+        <div class="col row justify-content-center mb-1 " style=" width: ;   background-color:; " >
+
+                              <div class=" col  "style=" 
+                                                    color:yellow; background-color: #880E4F  ; 
+                                                    padding: 10px;
+                                                    width:  ;
+                                                    font: italic small-caps bold 16px/16px Georgia, serif;
+                                                    text-align:left;
+                                                    " > Température. alerte   
+                              </div> 
+                              <div  class=" col   " id="ID_Temp_alerte"
+                                   style=" 
+                                         background-color:#3E2723; 
+                                         width:  ;
+                                          color:white; 
+                                           padding: 10px;
+                                          font: italic small-caps bold 15px/20px Georgia, serif;
+                                          text-align:left;
+                                          " >"*******"
+                              </div> 
+     </div>                               
+                              
+  <!------------------------------------------------------------------------------>
+        <div class="col row justify-content-center mb-1 " style=" width: ;   background-color:; " >
+
+                              <div class=" col  "style=" 
+                                                    color:yellow; background-color: #880E4F  ; 
+                                                    padding: 10px;
+                                                    width:  ;
+                                                    font: italic small-caps bold 16px/16px Georgia, serif;
+                                                    text-align:left;
+                                                    " > Température pic  
+                              </div> 
+                              <div  class=" col   " id="ID_Temp_pic"
+                                   style=" 
+                                         background-color:#3E2723; 
+                                         width:  ;
+                                          color:white; 
+                                           padding: 10px;
+                                          font: italic small-caps bold 15px/20px Georgia, serif;
+                                          text-align:left;
+                                          " >"*******"
+                              </div> 
+     </div>                               
+                              
+  <!------------------------------------------------------------------------------>
+        <div class="col row justify-content-center mb-1 " style=" width: ;   background-color:; " >
+
+                              <div class=" col  "style=" 
+                                                    color:yellow; background-color: #880E4F  ; 
+                                                    padding: 10px;
+                                                    width:  ;
+                                                    font: italic small-caps bold 16px/16px Georgia, serif;
+                                                    text-align:left;
+                                                    " > Message Alarme 
+                              </div> 
+                              <div  class=" col   " id="ID_message"
+                                   style=" 
+                                         background-color:#3E2723; 
+                                         width:  ;
+                                          color:white; 
+                                           padding: 10px;
+                                          font: italic small-caps bold 15px/20px Georgia, serif;
+                                          text-align:left;
+                                          " >"*******"
+                              </div> 
+     </div>  
+      <div class="col row justify-content-center mb-0 " style=" width: ;   background-color:; " >
+
+      </div> 
+      <br> 
+   </div>
+  </div>
+        
+  <!----------------------------OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO------------------------------------>   
+        
+   <div id="boutons" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 " >   
+    <div  class=" row justify-content-center  " style=" background-color:xxxred  ; width:;" >   
+
+             <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/param_acces" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Reglage paramamètres d'accés au système</a> </div>     
+
+
+             <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/param_base" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Reglage paramamètres de fonctionnement.</a> </div>     
+
+
+             <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/param_internet" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Reglage paramamètres de connexion au DB.</a> </div>    
+
+
+
+            <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/infoD" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Informations générales sur le système</a> </div>   
+
+            <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/onoff_info" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Historiques des Evènements </a> </div>   
+
+
+             <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/courbe_fonct" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >courbe de variation de Température & Humidité</a> </div>      
+
+
+             <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/param_reseau" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Reglage paramamètres de connexion au réseau </a> </div>   
+
+
+            <div class=" mb-0"  style="margin:20px;"> 
+             <a  href="/restart_device" style=" text-decoration-line: none; font: italic small-caps bold 12px/20px Georgia, serif;
+            width:250px; " class="btn cta" >Redemarrage de système SCTH</a> </div>  <br> <br> <br> <br>         
+            </div>
+        
+  <!----------------------------OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO------------------------------------>   
+  </div>
+  <br> <br>  
+
+  <!------------------------------------------------------  partie info  ----------------------------------->
+   <br><br><br>
+ </div>
+</body>
+  <script>
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm                       
+   function redir() {self.location.href="/exit"}
+   setTimeout(redir,120000000)
+//mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm 
+               setInterval(function () 
+                      {
+                       
+
+                       var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() 
+                                {
+                                  if (this.readyState == 4 && this.status == 200) 
+                                      {
+                                              var reponse = this.responseText;
+                                              var rep = reponse.split("x");  
+                                              var alerte       = rep[6]; 
+                                              var Tmax         = rep[9]; 
+                                              var deslocal     = rep[10]; 
+                                              var msgalarme    = rep[13]; 
+                         var aray_val = msgalarme.split("-");
+                                                                       
+                                          
+                                               document.getElementById("ID_mode").innerHTML = rep[12];  
+                                               document.getElementById("ID_Temp_alerte").innerHTML =Tmax+" °C"; 
+                                               document.getElementById("ID_Temp_pic").innerHTML = rep[7]+ " -> "+rep[8] ;     
+                                               document.getElementById("ID_deslocal").innerHTML = deslocal;
+ 
+ 
+ 
+                                                if (aray_val[1] == "1") {  document.getElementById("ID_message").innerHTML = "Défaut au niveau capteur de température";  }
+                                                if (aray_val[2] == "1") { document.getElementById("ID_message").innerHTML  = "Température dépasse le seuil"; }
+                                                if (aray_val[3] == "1") {  document.getElementById("ID_message").innerHTML = "Température au dessous de seuil";  }
+                                                if (aray_val[4] == "1") { document.getElementById("ID_message").innerHTML  = "Problème connexion"; }
+ 
+
+                                               
+ 
+                                              if(alerte=="oui") 
+                                                {                                           
+                                                  document.getElementById("alerte").style.visibility = "visible";
+                                                }
+                      
+                                              else if(alerte=="non") 
+                                                {                                           
+                                                  document.getElementById("alerte").style.visibility = "hidden";
+                                                }
+     }
+                                };
+                        xhttp.open("GET", "/variables", true);
+                        xhttp.send();
+    }, 1000 ) ;
+ 
+    
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+      var g1 = new JustGage({
+        id: 'g1',
+        value: 25,
+        min: 0,
+        max: 50,
+        symbol: '(°C)',
+        pointer: true,
+        pointerOptions: {
+          toplength: 1,
+          bottomlength: 10,
+          bottomwidth:8,
+          color: 'BLUE ',
+          stroke: 'BLUE ',
+          stroke_width: 1,
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [
+        {
+          color: 'yellow',
+          lo: 0,
+          hi: 10
+        }, 
+                {
+          color: 'lightgreen',
+          lo: 10,
+          hi: 35
+        }, 
+        {
+          color: 'red',
+          lo: 35,
+          hi: 50
+        }],
+        counter: true
+      });
+
+      var g2 = new JustGage({
+        id: 'g2',
+        value: 55,
+        min: 0,
+        max: 100,
+        symbol: '(%)',
+        pointer: true,
+        pointerOptions: {
+          toplength: 1,
+          bottomlength: 10,
+          bottomwidth:8,
+          color: 'BLUE ',
+          stroke: 'BLUE ',
+          stroke_width: 1,
+        },
+        gaugeWidthScale: 0.6,
+        customSectors: [
+        {
+          color: 'yellow',
+          lo: 0,
+          hi: 50
+        }, 
+                {
+          color: 'lightgreen',
+          lo: 50,
+          hi: 75
+        }, 
+        {
+          color: 'red',
+          lo: 75,
+          hi: 100
+        }],
+        counter: true
+      });
+
+
+      var g3 = new JustGage({
+        id: 'g3',
+        value: 40,
+        min: 0,
+        max: 100,
+        symbol: '%',
+        donut: true,
+        pointer: true,
+        gaugeWidthScale: 0.4,
+        pointerOptions: {
+          toplength: 10,
+          bottomlength: 10,
+          bottomwidth: 8,
+          color: '#000'
+        },
+        customSectors: [{
+          color: "#ff0000",
+          lo: 50,
+          hi: 100
+        }, {
+          color: "#00ff00",
+          lo: 0,
+          hi: 50
+        }],
+        counter: true
+      });
+
+      var g4 = new JustGage({
+        id: 'g4',
+        value: 70,
+        min: 6,
+        max: 100,
+        symbol: '%',
+        pointer: true,
+        pointerOptions: {
+          toplength: 5,
+          bottomlength: -20,
+          bottomwidth: 6,
+          color: '#8e8e93'
+        },
+        gaugeWidthScale: 0.1,
+        counter: true
+      });
+             
+
+               
+               
+               setInterval(function() 
+                            {
+                                    var temp,hum;
+                                    
+                                    var xhttp = new XMLHttpRequest();
+                                    xhttp.onreadystatechange = function()   
+                                            {
+                                                if (this.readyState == 4 && this.status == 200) 
+                                                  {
+                                                      var reponse = this.responseText;
+                                                      var decomp = reponse.split("x");  
+                                                      temp =  parseFloat(decomp[0]);
+                                                      hum  =  parseFloat(decomp[1]);           
+                                                      g1.refresh(temp);       
+                                                      g2.refresh(hum);     
+                                                  }
+                                            };
+                                    xhttp.open("GET", "/variablesPart", true);
+                                    xhttp.send();
+
+                        
+                        }, 1000);
+
+
+    });
+    </script>
+  
+     
+<style>
+ 
+  .gauge {
+    width: 170px;
+    height: 150px;
+  }
+
+  button {
+    border-radius: 15px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    width:350px;
+  }
+
+body {
+  background-image:  url('http://www.ys-innovation.tn/images_ESP/SMXX6.jpg');
+  background-color:  #F6DDCC;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+
+/* button 
+---------------------------------------------- */
+
+/* color styles 
+---------------------------------------------- */
+
+/* black */
+.black {
+  color: #d7d7d7;
+  border: solid 1px #333;
+  background: #333;
+  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+  background: -moz-linear-gradient(top,  #666,  #000);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+.black:hover {
+  background: #000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#000));
+  background: -moz-linear-gradient(top,  #444,  #000);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000');
+}
+.black:active {
+  color: #666;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444));
+  background: -moz-linear-gradient(top,  #000,  #444);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
+}
+ 
+
+/* rosy */
+.rosy {
+  color: WHITE;
+  border: solid 1px #b73948;
+  background: RED;
+  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(#bf404f));
+  background: -moz-linear-gradient(top,  RED,  RED);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f16c7c', endColorstr='#bf404f');
+}
+.rosy:hover {
+  background: #ba4b58;
+  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(#a53845));
+  background: -moz-linear-gradient(top,  #cf5d6a,  RED);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#cf5d6a', endColorstr='#a53845');
+}
+.rosy:active {
+  color: blue;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bf404f), to(#f16c7c));
+  background: -moz-linear-gradient(top,  #bf404f,  #f16c7c);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf404f', endColorstr='#f16c7c');
+}
+
+
+.btn {
+  color: yellow;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.075em;
+  padding: .8em 1em;
+  margin: 0em;
+  position: relative;
+  align-self: center;
+  text-transform: uppercase;
+  border: 3px yellow solid;
+  border-image: linear-gradient(45deg, yellow 0%, yellow 100%);
+  border-image-slice: 1 1 0 0;
+  z-index: 1;
+  box-shadow: -0.5em 0.5em rgba(16, 24, 50, 0);
+  transform-origin: left bottom;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+.btn:before, .btn:after {
+  border: 3px #F8BBD0 solid;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+.btn:before {
+  border-image: linear-gradient(45deg, #yellow 0%, #yellow 100%);
+  border-image-slice: 1 1 0 1;
+  left: -0.59em;
+  top: .15em;
+  width: .31em;
+  height: 100%;
+  transform: skewY(-45deg);
+}
+.btn:after {
+  border-image: linear-gradient(45deg, #F8BBD0 0%, #F8BBD0 100%);
+  border-image-slice: 1 1 1 0;
+  bottom: -0.61em;
+  right: 0.16em;
+  width: 100%;
+  height: .31em;
+  transform: skewX(-45deg);
+}
+.btn:hover {
+  background-color: white;
+  background-size: 90%;
+  transform: translate(0.5em, -0.5em);
+  box-shadow: -1em 1em 0.15em rgba(16, 24, 50, 0.1);
+}
+
+ 
+
+.cta {
+  background-color: #F8BBD0;
+  background-image:  ;
+  background-size: 100%;
+  background-image: -moz-linear-gradient(45deg, #00bcdd 0%, #FFCDD2 100%);
+  background-image: -webkit-linear-gradient(45deg, black 0%, #006064 100%);
+  background-image: ;
+  border-image: linear-gradient(45deg, #FFCDD2 0%, #FFCDD2 100%);
+  border-image-slice: 1;
+  color: white;
+}
+ 
+ 
+.cta:hover {
+  background: white;
+  border-image: linear-gradient(45deg, #00bcdd 0%, #CCFF90 100%);
+  border-image-slice: 1;
+  color: #101832;
+}
+.cta:hover:before {
+  height: 100%;
+}
+.cta:hover:after {
+  width: 100%;
+}
+
+
+ 
+
+</style>
+
+</html>
+
+)rawliteral";
