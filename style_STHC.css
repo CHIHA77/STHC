@@ -94,7 +94,7 @@ body {
 }
 
 
-.btn {
+.bttn {
   color: yellow;
   cursor: pointer;
   display: inline-block;
@@ -115,14 +115,14 @@ body {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
-.btn:before, .btn:after {
+.bttn:before, .bttn:after {
   border: 3px #F8BBD0 solid;
   content: '';
   display: block;
   position: absolute;
   z-index: -1;
 }
-.btn:before {
+.bttn:before {
   border-image: linear-gradient(45deg, #yellow 0%, #yellow 100%);
   border-image-slice: 1 1 0 1;
   left: -0.59em;
@@ -131,7 +131,7 @@ body {
   height: 100%;
   transform: skewY(-45deg);
 }
-.btn:after {
+.bttn:after {
   border-image: linear-gradient(45deg, #F8BBD0 0%, #F8BBD0 100%);
   border-image-slice: 1 1 1 0;
   bottom: -0.61em;
@@ -140,7 +140,7 @@ body {
   height: .31em;
   transform: skewX(-45deg);
 }
-.btn:hover {
+.bttn:hover {
   background-color: white;
   background-size: 90%;
   transform: translate(0.5em, -0.5em);
