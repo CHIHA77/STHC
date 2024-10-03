@@ -230,3 +230,53 @@ body {
           box-shadow: inset 0.25em 0.25em 0.25em rgba(255, 255, 255, 0.25), inset -0.25em -0.25em 0.25em 0.5em rgba(0, 0, 0, 0.25), inset 1em 0.5em 0.5em rgba(0, 0, 0, 0.5);
         }
       }
+         @font-face {
+            font-family: 'Digital7Italic';
+            src: url('https://raw.githubusercontent.com/CHIHA77/STHC/main/DocsForLinks/Css_files/digital-7.ttf') format('truetype');
+
+        }
+ /* Ajoutons du style au modal */
+.ajsrConfirm {
+    position: absolute;
+    z-index: 10001;
+    width: 340px;
+    height: auto; /* Ajuste automatiquement selon le contenu */
+    left: 150%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Pour centrer */
+    background-color: white; /* Fond blanc pour le modal */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour la zone de footer contenant les boutons */
+.ajsrConfirm .footer {
+    display: flex;
+    justify-content: space-around; /* Espace entre les boutons */
+    padding: 10px 0; /* Espace au-dessus et en dessous des boutons */
+}
+
+/* Style des boutons */
+.ajsrConfirm .btn {
+    padding: 10px 20px; /* Ajuster la taille des boutons */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.ajsrConfirm .btn.cancel {
+    background-color: #dc3545; /* Couleur différente pour le bouton annuler */
+}
+.blinking{
+  animation:blinkingText 0.7s infinite;
+}
+@keyframes blinkingText{
+  0%{   color: #ff8a80; }
+  49%{  color: #ff8a80; }
+  50%{  color: #ff8a80; }
+  99%{  color:transparent;  }
+  100%{ color: #ff8a80; }
+}
