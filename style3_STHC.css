@@ -1,0 +1,214 @@
+/*wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->*/
+ @font-face {
+ font-family: 'Digital7Italic';
+ src: url('https://raw.githubusercontent.com/CHIHA77/STHC/main/DocsForLinks/Css_files/digital-7.ttf') format('truetype');}
+/*wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->*/
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 1000;
+}
+/*wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->*/
+#moodal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: none;
+    text-align: center;
+}
+#moodal h2 {
+    color: red;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#moodal p {
+    font-size: 18px;
+    color: #333;
+}
+/*wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->*/
+/* Arrière-plan sombre pour la modale */
+.modal.fade {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre avec opacité */
+}
+/* Stylisation générale de la modale */
+.modal-confirm {
+    color: #636363;
+    width: 350px;
+}
+
+.modal-confirm .modal-content {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    background-color: white;
+}
+
+.modal-confirm .modal-header {
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 0;
+}
+
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -2px;
+}
+
+.modal-confirm .modal-body {
+    color: #999;
+    padding: 10px 0;
+}
+
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+/* Icône dans la boîte */
+.modal-confirm .icon-box {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid #f15e5e;
+}
+
+.modal-confirm .icon-box i {
+    color: #f15e5e;
+    font-size: 36px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Bouton "Cancel" stylisé pour être clair et brillant */
+.modal-confirm .btn-blue {
+    background-color: #0091ea; /* Couleur claire */
+    color: white;
+    border: 2px solid #0091ea;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Effet de brillance */
+    border-radius: 4px;
+    transition: all 0.4s;
+    min-width: 120px;
+    min-height: 35px;
+}
+
+.modal-confirm .btn-blue:hover, .modal-confirm .btn-blue:focus {
+    background-color: #ffffff;
+    color: #333;
+    border-color: #ddd;
+}
+
+/* Bouton "OK" en rouge */
+.modal-confirm .btn-danger {
+    background-color: #f15e5e; /* Rouge */
+    border-color: #f15e5e;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.4s;
+    min-width: 120px;
+    min-height: 35px;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-blue:focus {
+    background-color: #ffffff;
+    color: #333;
+    border-color: #ddd;
+}
+
+/* Style pour centrer la modale */
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+/*wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->*/
+.noblinking {}
+.blinking{
+animation:blinkingText 0.7s infinite;
+}
+@keyframes blinkingText{
+  0%{   color: #ff8a80; }
+  49%{  color: #ff8a80; }
+  50%{  color: #ff8a80; }
+  99%{  color:transparent;  }
+  100%{ color: #ff8a80; }
+}
+/*wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->*/
+
+        .about-editor-header {
+            background-color: #007bff; /* Couleur de l'arrière-plan du titre */
+            color: white; /* Couleur du texte du titre */
+            display: flex;  /* Aligner le bouton à côté du titre */
+            justify-content: space-between;  /* Espacer le titre et le bouton */
+            align-items: center;  /* Aligner verticalement */
+            padding: 10px 20px;
+        }
+
+        .about-editor-body {
+            display: flex;
+            align-items: center;
+            padding: 20px; /* Ajout de padding pour espacer le contenu des bordures */
+            border-radius: 0px 0px 10px 10px; /* Arrondi des coins de la fenêtre modale */
+            border: 0px;
+            background-color: #ffe0b2; /* Couleur d'arrière-plan du corps de texte */
+        }
+
+        .about-editor-body img {
+            border-radius: 50%;
+            width: 180px; /* Agrandissement de l'image */
+            height: 180px;
+            object-fit: cover;
+            margin-left: 20px;
+        }
+
+        .about-editor-body p {
+            text-align: justify;
+            color: #343a40; /* Couleur du texte */
+            font-size: 18px; /* Taille du texte */
+            width: 100%;
+            font-family: 'Digital7Italic2'; /* Application de la police personnalisée */
+        }
+
+        .about-editor-content {
+            border: 0px; /* Couleur et taille des bordures */
+            border-radius: 15px; /* Arrondi des coins de la fenêtre modale */
+        }
+
+        .about-editor-button {
+            border: 0px solid #4a148c; /* Couleur et taille des bordures */
+            border-radius: 10px 10px 0px 0px; /* Arrondi des coins de la fenêtre modale */
+            background-color: #4a148c; 
+        }
+
+        /* Style pour le bouton de fermeture */
+        .close {
+            cursor: pointer !important;  /* Forcer le curseur en forme de main */
+        }
+
+        /* Déclaration correcte de la police personnalisée */
+        @font-face {
+            font-family: 'Digital7Italic2';
+            src: url('https://raw.githubusercontent.com/CHIHA77/STHC/main/DocsForLinks/Css_files/comici.ttf') format('truetype');
+        }
