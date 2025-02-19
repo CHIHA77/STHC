@@ -17,7 +17,17 @@
         min-width: 100%; 
         min-height: 100%;
       }
-
+    .stylis
+          {
+          font: italic small-caps bold 20px/30px Georgia, serif;
+          background-color:black;
+          margin-top:20px;
+          padding-top:10px;
+          padding-bottom:10px;
+          padding-left:15px;
+          padding-right:15px;
+           border-radius:15px  ;
+          }
       .content {
         position: relative;
          text-align: center;
