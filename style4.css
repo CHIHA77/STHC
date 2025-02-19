@@ -1,0 +1,102 @@
+      form {
+         background: ;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial;
+        font-size: 17px;
+      }
+
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+      }
+
+      .content {
+        position: relative;
+         text-align: center;
+        width: 100%;
+        padding: 1px;
+      }
+
+body {
+  background-image:  url('https://chiha77.github.io/STHC/images_ESP/image1003.jpg');
+  background-color: #BCAAA4;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+/* demoLeft */
+
+.demoLeft {background-color:#880E4F;
+  font-family: 'Open Sans', sans-serif;
+  font-size:12px;
+  text-decoration:none;
+   position:relative;
+  padding-right:10px;
+    padding-left:40px;
+ 
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 1px 0px  red, 0px 5px 0px 0px red, 0px 10px 5px red;
+  -moz-box-shadow: inset 0px 1px 0px  , 0px 5px 0px 0px red, 0px 10px 5px red;
+  -o-box-shadow: inset 0px 1px 0px , 0px 5px 0px 0px red, 0px 10px 5px red;
+  box-shadow: inset 0px 1px 0px #A1887F, 0px 5px 0px 0px #A1887F, 0px 5px 13px #A1887F;
+}
+
+.demoLeft:active {
+  top:3px;
+ 
+ 
+}
+
+.demoLeft::before {
+  background-color:#581845;
+  background-image:url(https://ys-innovation.tn/DocsForLinks/TEST_BOUTON111/images/left_arrow.png);
+  background-repeat:no-repeat;
+  background-position:center center;
+  content:"";
+  width:20px;
+  height:20px;
+  position:absolute;
+  left:15px;
+  top:50%;
+  margin-top:-9px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.demoLeft:active::before {
+}
+ /* rosy */
+.rosy {
+  color: WHITE;
+  border: solid 1px #b73948;
+  background: RED;
+  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(#bf404f));
+  background: -moz-linear-gradient(top,  RED,  RED);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f16c7c', endColorstr='#bf404f');
+}
+.rosy:hover {
+  background: #ba4b58;
+  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(#a53845));
+  background: -moz-linear-gradient(top,  #cf5d6a,  RED);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#cf5d6a', endColorstr='#a53845');
+}
+.rosy:active {
+  color: blue;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bf404f), to(#f16c7c));
+  background: -moz-linear-gradient(top,  #bf404f,  #f16c7c);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#bf404f', endColorstr='#f16c7c');
+}
+  
